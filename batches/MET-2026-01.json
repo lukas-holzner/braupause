@@ -8,7 +8,7 @@
   "@id": "urn:batch:MET-2026-01",
   "schemaVersion": "1.1.0",
   "identifier": "MET-2026-01",
-  "name": "Klassischer Met (Halbtrocken)",
+  "name": "Klassischer Met mit Apfelnote (Halbtrocken)",
   "description": "Klassischer Honigwein mit Apfelsaft-Grundsäure, vergoren im Jolly Keg und mit Spunding Valve entgast, anschließend stabilisiert und auf 10 °Bx nachgesüßt.",
   "recipeCategory": "Mead",
   "brew:style": {
@@ -25,18 +25,22 @@
   ],
   "author": {
     "@type": "Person",
-    "name": "Lukas & Simon"
+    "name": "Lukas & Simon",
+    "worksFor": {
+      "@type": "Brewery",
+      "name": "FabLab München e.V."
+    }
   },
   "brew:status": "conditioning",
-  "brew:statusLabel": "In Reifung / Nachsüßung",
+  "brew:statusLabel": "In Reifung",
   "dateCreated": "2026-11-13T20:00:00+01:00",
-  "dateModified": "2026-11-17T18:00:00+01:00",
+  "dateModified": "2026-11-17T15:09:00+01:00",
   "image": [
     {
       "@type": "ImageObject",
       "contentUrl": "assets/batches/MET-2026-01/jungmet-probe-fablab.jpg",
       "caption": "Erste Verkostungs-Probe des halbtrockenen Jungmets im Glas",
-      "stepPosition": 4
+      "stepPosition": 3
     },
     {
       "@type": "ImageObject",
@@ -54,7 +58,7 @@
     },
     "currentGravity": {
       "@type": "QuantitativeValue",
-      "value": 10.0,
+      "value": 9.0,
       "unitText": "°Bx",
       "description": "Refraktometerwert nach Nachsüßung (vorher: 9.0 °Bx / ca. 2.5 °P real)"
     },
@@ -77,7 +81,7 @@
     },
     "ledger": [
       {
-        "timestamp": "2026-11-17T16:00:00+01:00",
+        "timestamp": "2026-11-06T21:00:00+01:00",
         "type": "unaccounted_or_previous_draws",
         "label": "Bisherige Entnahmen & Abschwenk-Differenz",
         "delta": {
@@ -85,7 +89,7 @@
           "value": -4.36,
           "unitText": "L"
         },
-        "destination": "Vorab-Proben / Schwund"
+        "destination": "Abfüllung und Verkostung einer kleinen Menge"
       },
       {
         "timestamp": "2026-11-17T18:00:00+01:00",
@@ -115,6 +119,12 @@
       "@type": "HowToTool",
       "name": "Optisches Refraktometer",
       "brew:role": "measurement"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Brita Maxtra Wasserfilter",
+      "brew:role": "filtration",
+      "description": "Mit extra starkem Kalkfilter"
     }
   ],
   "brew:ingredients": [
@@ -213,7 +223,7 @@
       "position": 1,
       "brew:phase": "pitching",
       "name": "Anstellen",
-      "datePublished": "2026-11-13T20:00:00+01:00",
+      "datePublished": "2026-10-16T22:00:00+02:00",
       "itemListElement": [
         {
           "@type": "HowToDirection",
@@ -246,7 +256,7 @@
       "position": 2,
       "brew:phase": "primary_fermentation",
       "name": "Primärgärung & Drucksteuerung",
-      "datePublished": "2026-11-14T20:00:00+01:00",
+      "datePublished": "2026-10-17T14:00:00+02:00",
       "itemListElement": [
         {
           "@type": "HowToDirection",
@@ -254,7 +264,7 @@
         },
         {
           "@type": "HowToDirection",
-          "text": "Spunding Valve (Membranventil) angeschlossen (initialer Druck für stillen Met zu hoch, später korrigiert)."
+          "text": "Spunding Valve (Membranventil) angeschlossen"
         }
       ],
       "brew:settings": [
@@ -278,13 +288,50 @@
     {
       "@type": "HowToStep",
       "position": 3,
+      "brew:phase": "tasting",
+      "name": "Verkostung",
+      "datePublished": "2026-11-03T15:03:00+01:00",
+      "brew:measurements": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "refractometer_brix",
+          "name": "Refraktometer",
+          "value": 9.5,
+          "unitText": "°Bx"
+        }
+      ],
+      "itemListElement": [
+        {
+          "@type": "HowToDirection",
+          "text": "Met schmeckt gut mit noch deutlichem Apfelaroma"
+        }
+      ],
+      "image": [
+        {
+          "@type": "ImageObject",
+          "contentUrl": "assets/batches/MET-2026-01/jungmet-probe-fablab.jpg",
+          "caption": "Erste Verkostungs-Probe des halbtrockenen Jungmets im Glas",
+          "stepPosition": 3
+        }
+      ]
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "brew:phase": "packaging",
+      "name": "Abfüllung eine kleinen Probemenge",
+      "datePublished": "2026-11-06T15:05:00+01:00"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
       "brew:phase": "degassing",
       "name": "Druckreduktion & Entgasung",
       "datePublished": "2026-11-15T12:00:00+01:00",
       "itemListElement": [
         {
           "@type": "HowToDirection",
-          "text": "Spunding Valve auf < 1 PSI reduziert (drucklose Gärung zur CO2-Vermeidung)."
+          "text": "Spunding Valve auf 5 PSI reduziert (druckarme Gärung zur CO2-Vermeidung)."
         },
         {
           "@type": "HowToDirection",
@@ -296,64 +343,17 @@
           "@type": "PropertyValue",
           "propertyID": "spunding_pressure",
           "name": "Spunddruck",
-          "value": 0.5,
-          "maxValue": 1.0,
+          "value": 5.0,
           "unitText": "PSI"
         }
       ]
     },
     {
       "@type": "HowToStep",
-      "position": 4,
-      "brew:phase": "measurement",
-      "name": "Gärverlauf & Messungen",
-      "datePublished": "2026-11-17T16:00:00+01:00",
-      "description": "Halbtrockener Zustand erreicht.",
-      "brew:measurements": [
-        {
-          "@type": "PropertyValue",
-          "propertyID": "refractometer_brix",
-          "name": "Refraktometer",
-          "value": 9.0,
-          "unitText": "°Bx"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "real_extract",
-          "name": "Tatsächlicher Restextrakt",
-          "value": 2.5,
-          "unitText": "°P"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "abv",
-          "name": "Alkoholgehalt (berechnet)",
-          "value": 11.8,
-          "unitText": "% vol"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "volume_remaining",
-          "name": "Restvolumen im Fass",
-          "value": 12.14,
-          "unitText": "L"
-        }
-      ],
-      "image": [
-        {
-          "@type": "ImageObject",
-          "contentUrl": "assets/batches/MET-2026-01/jungmet-probe-fablab.jpg",
-          "caption": "Erste Verkostungs-Probe des halbtrockenen Jungmets im Glas",
-          "stepPosition": 4
-        }
-      ]
-    },
-    {
-      "@type": "HowToStep",
-      "position": 5,
+      "position": 6,
       "brew:phase": "stabilization_and_sweetening",
       "name": "Stabilisierung & Nachsüßung",
-      "datePublished": "2026-11-17T17:00:00+01:00",
+      "datePublished": "2026-11-16T22:00:00+01:00",
       "itemListElement": [
         {
           "@type": "HowToDirection",
@@ -394,8 +394,8 @@
         {
           "@type": "PropertyValue",
           "propertyID": "target_brix",
-          "name": "Ziel-Refraktometerwert nach Nachsüßung",
-          "value": 10.0,
+          "name": "Refraktometerwert nach Nachsüßung weiterhin bei 9, erneute Nachprüfung morgen",
+          "value": 9.0,
           "unitText": "°Bx"
         }
       ]
