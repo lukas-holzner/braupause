@@ -1,0 +1,155 @@
+{
+  "$schema": "../schemas/brew-batch.schema.json",
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "brew": "https://heimbrauerei-sendling.de/schema/brew/v1#"
+  },
+  "@type": "Recipe",
+  "@id": "urn:batch:MET-2026-02",
+  "schemaVersion": "1.1.0",
+  "identifier": "MET-2026-02",
+  "name": "Johannisbeermet",
+  "recipeCategory": "Mead",
+  "brew:style": {
+    "name": "Met",
+    "sweetness": "medium"
+  },
+  "keywords": [
+    "Met",
+    "Johannisbeere"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Lukas & Simon",
+    "worksFor": {
+      "@type": "Brewery",
+      "name": "FabLab München e.V."
+    }
+  },
+  "brew:status": "primary_fermentation",
+  "brew:statusLabel": "Hauptgärung",
+  "dateCreated": "2026-11-16T22:10:00+01:00",
+  "dateModified": "2026-11-17T15:28:00+01:00",
+  "image": [
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/batches/MET-2026-02/signal-2026-11-16-21-55-19-870-002.jpg",
+      "caption": "Met mit tief roter Farbe",
+      "stepPosition": 1
+    }
+  ],
+  "brew:vitalStatistics": {
+    "originalGravity": {
+      "@type": "QuantitativeValue",
+      "value": 25.0,
+      "unitText": "°Bx"
+    }
+  },
+  "brew:volumes": {
+    "initialVolume": {
+      "@type": "QuantitativeValue",
+      "value": 17.0,
+      "unitText": "L"
+    },
+    "currentVolume": {
+      "@type": "QuantitativeValue",
+      "value": 17.0,
+      "unitText": "L"
+    },
+    "ledger": []
+  },
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Jolly Keg",
+      "brew:role": "fermenter",
+      "description": "Leergewicht 4,81 kg"
+    }
+  ],
+  "brew:ingredients": [
+    {
+      "@type": "HowToSupply",
+      "brew:category": "water",
+      "brew:stage": "primary",
+      "name": "Gefiltertes Leitungswasser",
+      "requiredQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 11.37,
+        "unitText": "L"
+      }
+    },
+    {
+      "@type": "HowToSupply",
+      "brew:category": "fermentable",
+      "brew:stage": "primary",
+      "name": "Honig",
+      "requiredQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 5.5,
+        "unitText": "kg"
+      },
+      "description": "Aus Niederhelden"
+    },
+    {
+      "@type": "HowToSupply",
+      "brew:category": "juice",
+      "brew:stage": "primary",
+      "name": "Schwarze Johannisbere (100 %)",
+      "requiredQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 1.0,
+        "unitText": "L"
+      },
+      "description": "Voelkl Muttersaft. Schmeckt wirklich sehr intensiv."
+    },
+    {
+      "@type": "HowToSupply",
+      "brew:category": "juice",
+      "brew:stage": "primary",
+      "name": "Roter Johannisbeer Nektar (25%)",
+      "requiredQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 1.0,
+        "unitText": "L"
+      }
+    },
+    {
+      "@type": "HowToSupply",
+      "brew:category": "yeast",
+      "brew:stage": "primary",
+      "name": "Hambleton Bard Bulldog Dry Mead Yeast",
+      "requiredQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 28.0,
+        "unitText": "g"
+      }
+    }
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "brew:phase": "pitching",
+      "name": "",
+      "datePublished": "2026-11-17T22:10:00+01:00",
+      "image": [
+        {
+          "@type": "ImageObject",
+          "contentUrl": "assets/batches/MET-2026-02/signal-2026-11-16-21-55-19-870-002.jpg",
+          "caption": "Met mit tief roter Farbe",
+          "stepPosition": 1
+        }
+      ],
+      "brew:measurements": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "gravity_measured_top",
+          "name": "Gemessene Stammwürze (oben)",
+          "value": 25.0,
+          "unitText": "°Bx"
+        }
+      ]
+    }
+  ],
+  "description": "Weil das mit dem Apfel so gut funktioniert hat, füge ich dieses mal Johannisbeersaft statt Apfelsaft hinzu. Das sollte auch für eine schöne Farbe sorgen."
+}
