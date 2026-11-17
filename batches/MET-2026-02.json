@@ -29,12 +29,18 @@
   "brew:status": "primary_fermentation",
   "brew:statusLabel": "Hauptgärung",
   "dateCreated": "2026-11-16T22:10:00+01:00",
-  "dateModified": "2026-11-17T15:28:00+01:00",
+  "dateModified": "2026-11-17T15:31:00+01:00",
   "image": [
     {
       "@type": "ImageObject",
       "contentUrl": "assets/batches/MET-2026-02/signal-2026-11-16-21-55-19-870-002.jpg",
       "caption": "Met mit tief roter Farbe",
+      "stepPosition": 1
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "assets/batches/MET-2026-02/pxl-20261116-210017584.jpg",
+      "caption": "Honig hinzugeben",
       "stepPosition": 1
     }
   ],
@@ -137,6 +143,12 @@
           "@type": "ImageObject",
           "contentUrl": "assets/batches/MET-2026-02/signal-2026-11-16-21-55-19-870-002.jpg",
           "caption": "Met mit tief roter Farbe",
+          "stepPosition": 1
+        },
+        {
+          "@type": "ImageObject",
+          "contentUrl": "assets/batches/MET-2026-02/pxl-20261116-210017584.jpg",
+          "caption": "Honig hinzugeben",
           "stepPosition": 1
         }
       ],
