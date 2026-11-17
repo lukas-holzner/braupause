@@ -1,0 +1,460 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://heimbrauerei-sendling.de/schema/brew/v1/brew-batch.schema.json",
+  "title": "Braupause Batch Documentation (Schema.org / JSON-LD)",
+  "description": "Validiert Brau- und Met-Protokolle auf Basis von schema.org/Recipe mit domänenspezifischen Brau-Erweiterungen (brew:*).",
+  "type": "object",
+  "required": [
+    "@context",
+    "@type",
+    "identifier",
+    "name",
+    "recipeCategory",
+    "author",
+    "brew:status",
+    "dateCreated",
+    "brew:volumes",
+    "brew:ingredients",
+    "recipeInstructions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Pfad oder URI zum JSON-Schema für Editor-Autovervollständigung."
+    },
+    "@context": {
+      "type": "object",
+      "required": ["@vocab", "brew"],
+      "properties": {
+        "@vocab": {
+          "type": "string",
+          "const": "https://schema.org/"
+        },
+        "brew": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": true
+    },
+    "@type": {
+      "type": "string",
+      "const": "Recipe"
+    },
+    "@id": {
+      "type": "string",
+      "description": "Eindeutige URI/URN des Suds, z. B. urn:batch:MET-2026-01"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "default": "1.1.0",
+      "description": "Semantische Version des Dokumentenformats."
+    },
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Z0-9-]+$",
+      "description": "Kurz-ID des Suds (z. B. MET-2026-01). Muss mit dem Dateinamen ohne .json übereinstimmen."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Name des Rezepts bzw. Suds."
+    },
+    "description": {
+      "type": "string",
+      "description": "Optionale Kurzbeschreibung oder Notiz zum Sud."
+    },
+    "recipeCategory": {
+      "type": "string",
+      "enum": ["Mead", "Beer", "Cider", "Wine", "Hard Seltzer", "Other"],
+      "description": "Übergeordnete Getränkekategorie."
+    },
+    "brew:style": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Genaue Stilbezeichnung (z. B. Traditional Mead, Melomel, Münchner Helles)."
+        },
+        "bjcpCode": {
+          "type": "string",
+          "description": "Optionaler BJCP Style-Code (z. B. M1B für Semi-Sweet Traditional Mead)."
+        },
+        "sweetness": {
+          "type": "string",
+          "enum": ["dry", "semi-dry", "medium", "semi-sweet", "sweet"]
+        },
+        "carbonation": {
+          "type": "string",
+          "enum": ["still", "petillant", "sparkling"]
+        }
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true,
+      "description": "Schlagwörter / Tags für Suche und Filterung."
+    },
+    "author": {
+      "type": "object",
+      "required": ["@type", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "@type": { "const": "Person" },
+        "name": { "type": "string" },
+        "worksFor": {
+          "type": "object",
+          "required": ["@type", "name"],
+          "additionalProperties": false,
+          "properties": {
+            "@type": { "const": "Brewery" },
+            "name": { "type": "string" },
+            "location": { "type": "string" }
+          }
+        }
+      }
+    },
+    "brew:status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "primary_fermentation",
+        "secondary_fermentation",
+        "stabilization",
+        "conditioning",
+        "packaged",
+        "archived"
+      ],
+      "description": "Maschinenlesbarer Status des Suds."
+    },
+    "brew:statusLabel": {
+      "type": "string",
+      "description": "Freitext-Anzeigename für den aktuellen Status."
+    },
+    "dateCreated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Anstelldatum / Brautag im ISO-8601 Format (inkl. Uhrzeit und Zeitzone)."
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Zeitpunkt der letzten Protokoll-Aktualisierung (ISO-8601)."
+    },
+    "brew:vitalStatistics": {
+      "type": "object",
+      "description": "Zusammenfassung der wichtigsten Eckdaten des Suds.",
+      "additionalProperties": false,
+      "properties": {
+        "originalGravity": { "$ref": "#/$defs/QuantitativeValue" },
+        "currentGravity": { "$ref": "#/$defs/QuantitativeValue" },
+        "finalGravity": { "$ref": "#/$defs/QuantitativeValue" },
+        "abv": { "$ref": "#/$defs/QuantitativeValue" },
+        "ph": { "$ref": "#/$defs/QuantitativeValue" }
+      }
+    },
+    "brew:volumes": {
+      "type": "object",
+      "required": ["initialVolume", "currentVolume"],
+      "additionalProperties": false,
+      "properties": {
+        "initialVolume": { "$ref": "#/$defs/QuantitativeValue" },
+        "currentVolume": { "$ref": "#/$defs/QuantitativeValue" },
+        "ledger": {
+          "type": "array",
+          "description": "Chronologische Buchführung über Entnahmen, Verluste oder Abfüllungen.",
+          "items": { "$ref": "#/$defs/VolumeLedgerEntry" }
+        }
+      }
+    },
+    "tool": {
+      "type": "array",
+      "description": "Verwendetes Brau- und Messequipment.",
+      "items": { "$ref": "#/$defs/HowToTool" }
+    },
+    "brew:ingredients": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Vollständige Liste aller Zutaten über alle Phasen hinweg.",
+      "items": { "$ref": "#/$defs/IngredientSupply" }
+    },
+    "recipeInstructions": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Chronologisches Brau- und Gärprotokoll (Schritte, Messwerte, Einstellungen, Zugaben).",
+      "items": { "$ref": "#/$defs/HowToStep" }
+    },
+    "image": {
+      "type": "array",
+      "description": "Optionale Fotos zum Sud (z. B. Fassaufbau, Messproben, fertiges Getränk).",
+      "items": { "$ref": "#/$defs/BatchImage" }
+    }
+  },
+  "$defs": {
+    "UnitCode": {
+      "type": "string",
+      "description": "Standardisierte Einheiten für Volumen, Masse, Dichte/Extrakt, Druck und Temperatur.",
+      "enum": [
+        "L",
+        "mL",
+        "kg",
+        "g",
+        "mg",
+        "°P",
+        "°Bx",
+        "BLG",
+        "SG",
+        "% vol",
+        "PSI",
+        "bar",
+        "°C",
+        "pH",
+        "pcs",
+        "pkg"
+      ]
+    },
+    "QuantitativeValue": {
+      "type": "object",
+      "required": ["@type", "value", "unitText"],
+      "additionalProperties": false,
+      "properties": {
+        "@type": { "const": "QuantitativeValue" },
+        "value": { "type": "number" },
+        "minValue": { "type": "number" },
+        "maxValue": { "type": "number" },
+        "unitText": { "$ref": "#/$defs/UnitCode" },
+        "description": { "type": "string" }
+      }
+    },
+    "PropertyValue": {
+      "type": "object",
+      "required": ["@type", "propertyID", "value", "unitText"],
+      "additionalProperties": false,
+      "properties": {
+        "@type": { "const": "PropertyValue" },
+        "propertyID": {
+          "type": "string",
+          "description": "Maschinenlesbarer Schlüssel des Mess- oder Einstellwerts.",
+          "anyOf": [
+            {
+              "enum": [
+                "gravity_measured_top",
+                "gravity_calculated_total",
+                "original_gravity",
+                "refractometer_brix",
+                "real_extract",
+                "specific_gravity",
+                "target_brix",
+                "abv",
+                "spunding_pressure",
+                "temperature",
+                "ph",
+                "volume_remaining"
+              ]
+            },
+            { "type": "string" }
+          ]
+        },
+        "name": { "type": "string" },
+        "value": { "type": "number" },
+        "minValue": { "type": "number" },
+        "maxValue": { "type": "number" },
+        "unitText": { "$ref": "#/$defs/UnitCode" },
+        "description": { "type": "string" }
+      }
+    },
+    "HowToTool": {
+      "type": "object",
+      "required": ["@type", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "@type": { "const": "HowToTool" },
+        "name": { "type": "string" },
+        "brew:role": {
+          "type": "string",
+          "enum": [
+            "fermenter",
+            "pressure_control",
+            "measurement",
+            "temperature_control",
+            "filtration",
+            "bottling",
+            "other"
+          ]
+        },
+        "description": { "type": "string" }
+      }
+    },
+    "IngredientSupply": {
+      "type": "object",
+      "required": ["@type", "brew:category", "brew:stage", "name", "requiredQuantity"],
+      "additionalProperties": false,
+      "properties": {
+        "@type": { "const": "HowToSupply" },
+        "brew:category": {
+          "type": "string",
+          "enum": [
+            "water",
+            "fermentable",
+            "juice",
+            "fruit",
+            "hops",
+            "spice_and_herb",
+            "yeast",
+            "nutrient",
+            "yeast_and_nutrient",
+            "acid",
+            "stabilizer",
+            "fining",
+            "other"
+          ]
+        },
+        "brew:stage": {
+          "type": "string",
+          "enum": [
+            "mash",
+            "boil",
+            "primary",
+            "secondary",
+            "stabilization",
+            "back_sweetening",
+            "conditioning",
+            "packaging"
+          ]
+        },
+        "name": { "type": "string" },
+        "requiredQuantity": { "$ref": "#/$defs/QuantitativeValue" },
+        "estimatedCost": {
+          "type": ["number", "null"]
+        },
+        "brew:properties": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "description": { "type": "string" }
+      }
+    },
+    "StepAddition": {
+      "type": "object",
+      "required": ["name", "quantity"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "brew:category": { "type": "string" },
+        "quantity": { "$ref": "#/$defs/QuantitativeValue" },
+        "description": { "type": "string" }
+      }
+    },
+    "HowToDirection": {
+      "type": "object",
+      "required": ["@type", "text"],
+      "additionalProperties": false,
+      "properties": {
+        "@type": { "const": "HowToDirection" },
+        "text": { "type": "string" }
+      }
+    },
+    "HowToStep": {
+      "type": "object",
+      "required": ["@type", "position", "brew:phase", "name", "datePublished"],
+      "additionalProperties": false,
+      "properties": {
+        "@type": { "const": "HowToStep" },
+        "position": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "brew:phase": {
+          "type": "string",
+          "enum": [
+            "preparation",
+            "mashing",
+            "boiling",
+            "pitching",
+            "primary_fermentation",
+            "secondary_fermentation",
+            "degassing",
+            "measurement",
+            "stabilization_and_sweetening",
+            "conditioning",
+            "racking",
+            "packaging",
+            "tasting"
+          ]
+        },
+        "name": { "type": "string" },
+        "datePublished": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "description": { "type": "string" },
+        "itemListElement": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/HowToDirection" }
+        },
+        "brew:measurements": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/PropertyValue" }
+        },
+        "brew:settings": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/PropertyValue" }
+        },
+        "brew:additions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/StepAddition" }
+        },
+        "image": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/BatchImage" }
+        }
+      }
+    },
+    "BatchImage": {
+      "type": "object",
+      "required": ["@type", "contentUrl", "caption"],
+      "additionalProperties": false,
+      "properties": {
+        "@type": { "const": "ImageObject" },
+        "contentUrl": { "type": "string" },
+        "caption": { "type": "string" },
+        "stepPosition": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "VolumeLedgerEntry": {
+      "type": "object",
+      "required": ["timestamp", "type", "label", "delta"],
+      "additionalProperties": false,
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "sample_consumption",
+            "trub_loss",
+            "racking_loss",
+            "bottling",
+            "kegging",
+            "addition",
+            "unaccounted_or_previous_draws",
+            "other"
+          ]
+        },
+        "label": { "type": "string" },
+        "delta": { "$ref": "#/$defs/QuantitativeValue" },
+        "destination": { "type": "string" }
+      }
+    }
+  }
+}

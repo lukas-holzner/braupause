@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-17T14:22:00+01:00",
+  "title": "Design System: Braupause",
+  "extensions": {
+    "colorMeta": {
+      "bg-page": {
+        "role": "neutral",
+        "displayName": "Blaupausen-Unterlage / Blueprint Mat",
+        "canonical": "#EBF1FA",
+        "tonalRamp": ["#12284A", "#1F4E8C", "#334766", "#526685", "#8DA6CC", "#BACBE6", "#D9E4F5", "#EBF1FA"]
+      },
+      "bg-surface": {
+        "role": "neutral",
+        "displayName": "Warmes Werkbuch-Creme / Journal Card Cream",
+        "canonical": "#FBF7EE",
+        "tonalRamp": ["#12284A", "#334766", "#526685", "#9B907C", "#D8CCB4", "#EDE3CE", "#F5EFE1", "#FBF7EE"]
+      },
+      "bg-subtle": {
+        "role": "neutral",
+        "displayName": "Hafermalz-Beige / Malt Tint",
+        "canonical": "#EDE3CE",
+        "tonalRamp": ["#12284A", "#334766", "#526685", "#8D826E", "#BDB199", "#D8CCB4", "#EDE3CE", "#FBF7EE"]
+      },
+      "bg-row-hover": {
+        "role": "neutral",
+        "displayName": "Honig-Schimmer / Warm Row Hover",
+        "canonical": "#FFF6E0",
+        "tonalRamp": ["#451A03", "#92400E", "#B45309", "#D97706", "#F4A93A", "#FDE68A", "#FFF0C2", "#FFF6E0"]
+      },
+      "ink-primary": {
+        "role": "neutral",
+        "displayName": "Tief-Marine / Emblem Ink",
+        "canonical": "#12284A",
+        "tonalRamp": ["#091529", "#12284A", "#1C3B69", "#334766", "#526685", "#7B8CA6", "#BAC6D6", "#E6EFFA"]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Werkstatt-Schieferblau",
+        "canonical": "#334766",
+        "tonalRamp": ["#12284A", "#223450", "#334766", "#465B7D", "#526685", "#7B8CA6", "#BAC6D6", "#E6EFFA"]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Skalen-Blaugrau",
+        "canonical": "#526685",
+        "tonalRamp": ["#12284A", "#223450", "#334766", "#526685", "#7184A1", "#98A7BE", "#CAD3E0", "#E6EFFA"]
+      },
+      "blueprint-blue": {
+        "role": "primary",
+        "displayName": "Blaupausen-Blau / Blueprint Blue",
+        "canonical": "#1F4E8C",
+        "tonalRamp": ["#0D2445", "#153869", "#1F4E8C", "#2C67B5", "#4D84CC", "#84ADE3", "#C2D8F5", "#E6EFFA"]
+      },
+      "blueprint-tint": {
+        "role": "primary",
+        "displayName": "Blaupausen-Nebel",
+        "canonical": "#E6EFFA",
+        "tonalRamp": ["#153869", "#1F4E8C", "#2C67B5", "#4D84CC", "#78A4DC", "#A6C5EB", "#CFE1F7", "#E6EFFA"]
+      },
+      "amber-accent": {
+        "role": "primary",
+        "displayName": "Spund-Bernstein / Mead Amber",
+        "canonical": "#B45309",
+        "tonalRamp": ["#451A03", "#78350F", "#92400E", "#B45309", "#D97706", "#F4A93A", "#FDE68A", "#FFF0C2"]
+      },
+      "amber-gold": {
+        "role": "primary",
+        "displayName": "Waben-Gold / Honeycomb Gold",
+        "canonical": "#F4A93A",
+        "tonalRamp": ["#451A03", "#92400E", "#B45309", "#D97706", "#F4A93A", "#F7BE68", "#FCE0AC", "#FFF0C2"]
+      },
+      "amber-hover": {
+        "role": "primary",
+        "displayName": "Dunkler Waldhonig / Deep Mead Amber",
+        "canonical": "#92400E",
+        "tonalRamp": ["#3B1502", "#5C2408", "#78350F", "#92400E", "#B45309", "#D97706", "#F4A93A", "#FFF0C2"]
+      },
+      "amber-tint": {
+        "role": "primary",
+        "displayName": "Jungmet-Glanz / Warm Honey Tint",
+        "canonical": "#FFF0C2",
+        "tonalRamp": ["#78350F", "#92400E", "#B45309", "#D97706", "#F4A93A", "#F8CE82", "#FCE2AE", "#FFF0C2"]
+      },
+      "olive-status": {
+        "role": "secondary",
+        "displayName": "Hopfen-Oliv / Bottle Green",
+        "canonical": "#1E5631",
+        "tonalRamp": ["#0D2818", "#143D23", "#1E5631", "#276F40", "#5FA035", "#8CC152", "#B8DFA1", "#DCFCE7"]
+      },
+      "olive-tint": {
+        "role": "secondary",
+        "displayName": "Hopfen-Grünglas",
+        "canonical": "#DCFCE7",
+        "tonalRamp": ["#143D23", "#1E5631", "#276F40", "#5FA035", "#7DB343", "#A4D67B", "#C5EBC9", "#DCFCE7"]
+      },
+      "grape-purple": {
+        "role": "tertiary",
+        "displayName": "Trauben-Violett / Berry Must",
+        "canonical": "#7E44A8",
+        "tonalRamp": ["#361A4D", "#522973", "#68358F", "#7E44A8", "#9B64C4", "#BC91DC", "#DDC2F0", "#F3E8FF"]
+      },
+      "grape-tint": {
+        "role": "tertiary",
+        "displayName": "Trauben-Duft",
+        "canonical": "#F3E8FF",
+        "tonalRamp": ["#522973", "#7E44A8", "#9B64C4", "#B180D4", "#C8A3E3", "#DFC6F2", "#EBDBFA", "#F3E8FF"]
+      },
+      "border-hairline": {
+        "role": "neutral",
+        "displayName": "Werkbuch-Haarlinie",
+        "canonical": "#D8CCB4",
+        "tonalRamp": ["#12284A", "#526685", "#8D826E", "#B3A68E", "#C8BC9F", "#D8CCB4", "#EDE3CE", "#FBF7EE"]
+      },
+      "border-strong": {
+        "role": "neutral",
+        "displayName": "Wappen-Kontur",
+        "canonical": "#12284A",
+        "tonalRamp": ["#091529", "#12284A", "#1F4E8C", "#334766", "#526685", "#8FA0B8", "#C8D3E3", "#E6EFFA"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Serif",
+        "purpose": "Hauptüberschriften (h1) mit klassischem Werkbuch-Charakter."
+      },
+      "headline": {
+        "displayName": "Section Headline Serif",
+        "purpose": "Sektionsüberschriften (h2) und die Braupause-Wortmarke."
+      },
+      "title": {
+        "displayName": "Step & Card Title Serif",
+        "purpose": "Prozessschritte (h3) und Steckbrief-Überschriften."
+      },
+      "body": {
+        "displayName": "Workshop Sans",
+        "purpose": "Fließtext, Anweisungen, Tabellen und Register-Einträge."
+      },
+      "label": {
+        "displayName": "Stamp & Gauge Monospace",
+        "purpose": "Chargen-IDs, Phasen-Stempel, Foto-Bildunterschriften und tabellarische Labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-card",
+        "value": "0 3px 8px -2px rgba(18, 40, 74, 0.14)",
+        "purpose": "Kompakter, weicher Tief-Marine-Schatten für Hauptkarten."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-quart",
+        "value": "180ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Sanftes Ausrichten von Foto-Abzügen, Emblem-Kippen und Button-Übergängen."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Taktiler Primär-Button in Spund-Bernstein mit Tief-Marine-Kontur.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Foto groß ansehen</button>",
+      "css": ".ds-btn-primary { font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif); font-size: 1rem; font-weight: 600; color: var(--bg-surface, #FBF7EE); background-color: var(--amber-accent, #B45309); border: 1.5px solid var(--border-strong, #12284A); border-radius: 6px; padding: 0.55rem 1rem; cursor: pointer; transition: background-color 180ms cubic-bezier(0.22, 1, 0.36, 1), transform 180ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { background-color: var(--amber-hover, #92400E); transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--amber-accent, #B45309); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Instrument Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Sekundär-Button in Hafermalz-Beige mit Tief-Marine-Kontur für Rücknavigation.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#all\">← Alle Sude</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif); font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--ink-primary, #12284A); background-color: var(--bg-subtle, #EDE3CE); border: 1.5px solid var(--border-strong, #12284A); border-radius: 6px; padding: 0.5rem 0.95rem; transition: background-color 180ms cubic-bezier(0.22, 1, 0.36, 1), transform 180ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-secondary:hover { background-color: var(--amber-tint, #FFF0C2); transform: translateY(-1px); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--amber-accent, #B45309); outline-offset: 2px; }"
+    },
+    {
+      "name": "Filter & Search Input",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Suchfeld auf warmem Werkbuch-Creme mit Tief-Marine-Fassung.",
+      "html": "<div class=\"ds-filter-bar\"><label class=\"ds-filter-label\" for=\"ds-search\">Sud suchen:</label><input id=\"ds-search\" class=\"ds-search-input\" type=\"search\" placeholder=\"Nach ID, Name, Stil oder Schlagwort filtern…\"></div>",
+      "css": ".ds-filter-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; padding: 0.9rem 1.15rem; background: var(--bg-surface, #FBF7EE); border: 1.5px solid var(--border-strong, #12284A); border-radius: 10px; font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif); } .ds-filter-label { font-size: 0.85rem; font-weight: 600; color: var(--ink-secondary, #334766); } .ds-search-input { flex: 1 1 16rem; padding: 0.55rem 0.85rem; font-size: 1rem; color: var(--ink-primary, #12284A); background: var(--bg-page, #EBF1FA); border: 1.5px solid var(--border-strong, #12284A); border-radius: 6px; } .ds-search-input::placeholder { color: var(--ink-muted, #526685); } .ds-search-input:focus-visible { outline: 2px solid var(--amber-accent, #B45309); outline-offset: 2px; }"
+    },
+    {
+      "name": "Site Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-header",
+      "description": "Kopfzeile mit Waben-Emblem, zweifarbiger Serif-Wortmarke und Status-Pill.",
+      "html": "<header class=\"ds-site-header\"><div class=\"ds-brand-lockup\"><div><p class=\"ds-site-brand\"><a href=\"#top\">Brau<span class=\"ds-brand-accent\">pause</span></a></p><p class=\"ds-site-subtitle\">NACH BLAUPAUSE GEBRAUT · SUD-REGISTER</p></div></div><div class=\"ds-header-meta\"><span class=\"ds-status-pill\">1 dokumentierter Sud</span></div></header>",
+      "css": ".ds-site-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding-bottom: 1.25rem; border-bottom: 2px solid var(--border-strong, #12284A); font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif); } .ds-site-brand { font-family: var(--font-serif, 'Iowan Old Style', Palatino, Georgia, serif); font-size: 1.4rem; font-weight: 700; margin: 0; } .ds-site-brand a { color: var(--ink-primary, #12284A); text-decoration: none; } .ds-brand-accent { color: var(--blueprint-blue, #1F4E8C); } .ds-site-subtitle { margin: 0.2rem 0 0; color: var(--ink-secondary, #334766); font-size: 0.85rem; } .ds-status-pill { display: inline-flex; align-items: center; font-size: 0.85rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 999px; background-color: var(--olive-tint, #DCFCE7); color: var(--olive-status, #1E5631); }"
+    },
+    {
+      "name": "Batch Code, Phase & Ingredient Badges",
+      "kind": "chip",
+      "refersTo": "chip-step-badge",
+      "description": "Chargen-Stempel, Phasen-Badge und wappenfarbcodierte Zutaten-Badges.",
+      "html": "<div class=\"ds-chip-row\"><span class=\"ds-code-id\">MET-2026-01</span><span class=\"ds-step-badge\">Schritt 2 · Primärgärung</span><span class=\"ds-cat-grape\">Fruchtsaft</span><span class=\"ds-status-pill\">In Reifung</span></div>",
+      "css": ".ds-chip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.55rem; font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif); } .ds-code-id { font-family: var(--font-mono, ui-monospace, Menlo, monospace); font-size: 0.85rem; color: var(--ink-primary, #12284A); background: var(--bg-subtle, #EDE3CE); padding: 0.25rem 0.6rem; border-radius: 4px; } .ds-step-badge { font-family: var(--font-mono, ui-monospace, Menlo, monospace); font-size: 0.85rem; color: var(--amber-hover, #92400E); background: var(--amber-tint, #FFF0C2); padding: 0.25rem 0.6rem; border-radius: 4px; } .ds-cat-grape { font-size: 0.85rem; font-weight: 600; color: var(--grape-purple, #7E44A8); background: var(--grape-tint, #F3E8FF); padding: 0.25rem 0.6rem; border-radius: 4px; } .ds-status-pill { font-size: 0.85rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 999px; background: var(--olive-tint, #DCFCE7); color: var(--olive-status, #1E5631); }"
+    },
+    {
+      "name": "Protocol Timeline Card",
+      "kind": "card",
+      "refersTo": "card-protocol",
+      "description": "Werkbuch-Protokollkarte mit Tief-Marine-Kontur, Phasen-Badge und Messwerten.",
+      "html": "<article class=\"ds-timeline-step\"><div class=\"ds-step-header\"><span class=\"ds-step-badge\">Schritt 4 · Messung</span><h3 class=\"ds-step-title\">Gärverlauf &amp; Messungen</h3></div><p class=\"ds-step-desc\">Halbtrockener Zustand erreicht.</p><ul class=\"ds-kv-list\"><li><span>Refraktometer</span><strong>9\u00a0°Bx</strong></li><li><span>Restextrakt</span><strong>2,5\u00a0°P</strong></li></ul></article>",
+      "css": ".ds-timeline-step { padding: 1.35rem 1.5rem; background: var(--bg-surface, #FBF7EE); border: 2px solid var(--border-strong, #12284A); border-radius: 10px; box-shadow: 0 3px 8px -2px rgba(18, 40, 74, 0.14); font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif); color: var(--ink-primary, #12284A); } .ds-step-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.65rem; margin-bottom: 0.65rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-hairline, #D8CCB4); } .ds-step-badge { font-family: var(--font-mono, ui-monospace, Menlo, monospace); font-size: 0.85rem; color: var(--amber-hover, #92400E); background: var(--amber-tint, #FFF0C2); padding: 0.25rem 0.6rem; border-radius: 4px; } .ds-step-title { font-family: var(--font-serif, 'Iowan Old Style', Palatino, Georgia, serif); font-size: 1.12rem; margin: 0; } .ds-step-desc { margin: 0 0 0.75rem; } .ds-kv-list { list-style: none; margin: 0; padding: 0; } .ds-kv-list li { display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px dashed var(--border-hairline, #D8CCB4); font-variant-numeric: tabular-nums; } .ds-kv-list li:last-child { border-bottom: none; }"
+    },
+    {
+      "name": "Keg Volume & Honey Sight Glass",
+      "kind": "custom",
+      "refersTo": "meter-volume",
+      "description": "Honiggoldenes Fass-Schauglas mit Tief-Marine-Kontur und tabellarischer Füllstandszeile.",
+      "html": "<div class=\"ds-volume-meter\"><div class=\"ds-volume-bar-track\"><div class=\"ds-volume-bar-fill\" style=\"width: 71%;\"></div></div><div class=\"ds-volume-caption\"><span>Aktuell im Fass: <strong>12,14\u00a0L</strong> (71\u00a0%)</span><span>Start: 17\u00a0L</span></div></div>",
+      "css": ".ds-volume-meter { padding: 1.1rem 1.25rem; background: var(--bg-surface, #FBF7EE); border: 1.5px solid var(--border-strong, #12284A); border-radius: 10px; font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif); } .ds-volume-bar-track { height: 0.85rem; background: var(--bg-subtle, #EDE3CE); border: 1.5px solid var(--border-strong, #12284A); border-radius: 999px; overflow: hidden; } .ds-volume-bar-fill { height: 100%; background: linear-gradient(90deg, var(--amber-accent, #B45309), var(--amber-gold, #F4A93A)); border-radius: 999px; } .ds-volume-caption { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--ink-secondary, #334766); margin-top: 0.55rem; font-variant-numeric: tabular-nums; } .ds-volume-caption strong { color: var(--ink-primary, #12284A); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Maker's Blueprint & Honey Cellar Journal",
+    "overview": "Braupause überträgt die Bildsprache des sechseckigen Waben-Blaupausen-Emblems direkt in ein gemütliches, handwerklich-verspieltes Brau- & Werkbuch. Auf einer hellen Blaupausen-Unterlage (#EBF1FA) liegen warme Creme-Karten (#FBF7EE), eingefasst von kräftigen Tief-Marine-Konturen (#12284A) wie in einem Werkstatt-Wappen. Gerasterte Blaupausen-Banner (#1F4E8C) setzen den technischen Rahmen, während honiggoldene Schaugläser, montierte Keller-Schnappschüsse und wappencodierte Zutaten-Badges Wärme und Braufreude transportieren.",
+    "keyCharacteristics": [
+      "Blaupause trifft Honigkeller: Das tiefe Blaupausen-Blau (#1F4E8C) mit feinem 24px-Raster bildet die Kopfzeilen der Sud-Dossiers, während Waben-Gold (#F4A93A) und Spund-Bernstein (#B45309) lebendige Füllstände und Prozess-Meilensteine markieren.",
+      "Kräftige Wappen-Konturen & sanfter Taktiler Lift: Warme Werkbuch-Karten (#FBF7EE) tragen markante 1.5px–2px Konturen in Tief-Marine (#12284A) mit weichem Offset-Schatten — genau wie die Umrisse des Braupause-Emblems.",
+      "Emblem-Farbcodierung für Zutaten & Phasen: Honig und Vergärbares leuchten in Waben-Gold, Fruchtsäfte in Trauben-Violett (#7E44A8), Hefe und Hopfen in Hopfen-Grün (#1E5631) und Wasser sowie Stabilisatoren in Blaupausen-Blau.",
+      "Montierte Schnappschüsse statt leerer Flächen: Echte Sud-Fotos werden wie Werkbuch-Abzüge auf Hafermalz-Matt (#EDE3CE) mit Tief-Marine-Rahmen und Bildunterschrift präsentiert und per Klick in einer nativen Lightbox vergrößert."
+    ],
+    "rules": [
+      {
+        "name": "The Emblem Outline Rule",
+        "body": "Äußere Hauptkarten (.batch-hero, .batch-showcase-card, .timeline-step) und montierte Foto-Rahmen tragen eine klare 1.5px bis 2px Kontur in Tief-Marine (#12284A) — angelehnt an die prägnante Strichstärke des Braupause-Emblems.",
+        "section": "colors"
+      },
+      {
+        "name": "The Blueprint Mat & Cream Card Rule",
+        "body": "Die Grundfläche ruht auf heller Blaupausen-Unterlage (#EBF1FA), darauf liegen Karten und Register in warmem Werkbuch-Creme (#FBF7EE) — so wirken Blaupausen-Blau und Honig-Gold gemütlich zusammen, ohne kühle Grauflächen.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Measurement Rule",
+        "body": "Jede Zahl — Stammwürze (°P), Refraktometer (°Bx), Alkoholgehalt (% vol), Spunddruck (PSI), Volumen (L) oder Datum — wird mit font-variant-numeric: tabular-nums (.num) und geschütztem Leerzeichen (\\u00A0) zur Einheit gesetzt.",
+        "section": "typography"
+      },
+      {
+        "name": "The Five-Step Type Discipline",
+        "body": "Sämtliche CSS-Regeln bleiben strikt auf den fünf dokumentierten Größenstufen (clamp(1.85rem, 3.5vw, 2.65rem), 1.4rem, 1.12rem, 1rem, 0.85rem), ohne beliebige Zwischenstufen einzuführen.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Ledger Rule",
+        "body": "Verschachtelte Kästen innerhalb einer Karte werfen keinen eigenen Schatten — Tiefe im Inneren entsteht ausschließlich über Linien, Raster und Farbtönungen.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do zeige echte Sud-Fotos aus batches/*.json als gerahmte Werkbuch-Abzüge mit ehrlichen Bildunterschriften und Lightbox-Ansicht.",
+      "Do halte alle Schriftgrößen strikt auf den fünf dokumentierten Stufen (clamp(1.85rem, 3.5vw, 2.65rem), 1.4rem, 1.12rem, 1rem, 0.85rem) und alle Zahlen in tabular-nums.",
+      "Do nutze die Emblem-Farbcodierung konsequent für Zutatenkategorien, Blaupausen-Banner und Status-Badges."
+    ],
+    "donts": [
+      "Don't erfinde künstliche Rechner, synthetische Barcodes oder nicht belegte Messwerte — jede Zahl und jedes Foto stammt direkt aus batches/*.json.",
+      "Don't setze helle/bernsteinfarbene Schrift mit zu geringem Kontrast auf #FFF0C2 (nutze dort mindestens #92400E oder #12284A).",
+      "Don't zeige JSON-Schema-Links oder technische API-Hinweise im Frontend."
+    ]
+  }
+}

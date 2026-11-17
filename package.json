@@ -1,0 +1,18 @@
+{
+  "name": "braupause",
+  "version": "1.0.0",
+  "description": "Statische Brau- und Met-Dokumentation (Schema.org / JSON-LD) für die Heimbrauerei München-Sendling",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "npm run validate && npm run build",
+    "test": "npm run check",
+    "serve": "npx --yes serve dist -l 4173"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}
