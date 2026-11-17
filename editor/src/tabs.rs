@@ -46,9 +46,23 @@ fn thumbnail(ui: &mut Ui, repo: &Path, url: &str, max: egui::Vec2) -> egui::Resp
         ui.painter().text(rect.center(), egui::Align2::CENTER_CENTER, "Datei fehlt", egui::FontId::proportional(13.0), theme::ERROR);
         return resp;
     }
+    let uri = format!("file://{}", abs.display());
+    if let Err(err) = ui.ctx().try_load_image(&uri, egui::load::SizeHint::default()) {
+        let mut resp = None;
+        egui::Frame::new().fill(theme::ERROR_TINT).corner_radius(4.0).inner_margin(egui::Margin::same(8)).show(ui, |ui| {
+            ui.set_width(max.x - 16.0);
+            ui.label(RichText::new("Vorschau fehlgeschlagen").color(theme::ERROR).small());
+            let r = ui.small_button("↻ Neu laden").on_hover_text(err.to_string());
+            if r.clicked() {
+                ui.ctx().forget_image(&uri);
+            }
+            resp = Some(r);
+        });
+        return resp.expect("frame shown");
+    }
     let resp = ui
         .add(
-            egui::Image::new(format!("file://{}", abs.display()))
+            egui::Image::new(uri.clone())
                 .max_size(max)
                 .corner_radius(4.0)
                 .sense(egui::Sense::click()),

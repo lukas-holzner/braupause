@@ -52,16 +52,25 @@ pub fn import(repo: &Path, batch_id: &str, src: &Path, max_edge: u32) -> Result<
     let file_name = unique_name(&dir, &slugify(&stem), ext);
     let target = dir.join(&file_name);
 
-    let file = fs::File::create(&target).map_err(|e| format!("{}: {e}", target.display()))?;
-    let mut writer = BufWriter::new(file);
-    let result = if keep_png {
-        img.write_to(&mut writer, image::ImageFormat::Png)
-    } else {
-        img.to_rgb8().write_with_encoder(JpegEncoder::new_with_quality(&mut writer, JPEG_QUALITY))
+    // Erst in eine versteckte Teildatei schreiben und dann umbenennen, damit nie eine
+    // halb geschriebene Datei unter dem endgültigen Namen sichtbar ist (Vorschau-Cache!).
+    let partial = dir.join(format!(".{file_name}.part"));
+    let write = || -> Result<(), String> {
+        let file = fs::File::create(&partial).map_err(|e| e.to_string())?;
+        let mut writer = BufWriter::new(file);
+        if keep_png {
+            img.write_to(&mut writer, image::ImageFormat::Png).map_err(|e| e.to_string())?;
+        } else {
+            img.to_rgb8()
+                .write_with_encoder(JpegEncoder::new_with_quality(&mut writer, JPEG_QUALITY))
+                .map_err(|e| e.to_string())?;
+        }
+        let file = writer.into_inner().map_err(|e| e.to_string())?;
+        file.sync_all().map_err(|e| e.to_string())?;
+        fs::rename(&partial, &target).map_err(|e| e.to_string())
     };
-    drop(writer);
-    if let Err(e) = result {
-        let _ = fs::remove_file(&target);
+    if let Err(e) = write() {
+        let _ = fs::remove_file(&partial);
         return Err(format!("{source_name}: Speichern fehlgeschlagen: {e}"));
     }
     let bytes = fs::metadata(&target).map(|m| m.len()).unwrap_or(0);
@@ -186,6 +195,7 @@ pub fn orphans(repo: &Path, batch_id: &str, referenced: &[String]) -> Vec<String
     let mut out: Vec<String> = entries
         .filter_map(|e| e.ok())
         .filter(|e| e.path().is_file() && is_image_file(&e.path()))
+        .filter(|e| !e.file_name().to_string_lossy().starts_with('.'))
         .map(|e| format!("assets/batches/{batch_id}/{}", e.file_name().to_string_lossy()))
         .filter(|url| !referenced.contains(url))
         .collect();
@@ -243,6 +253,12 @@ mod tests {
         let txt = base.join("notiz.txt");
         fs::write(&txt, "kein Bild").unwrap();
         assert!(import(&base, "MET-2026-09", &txt, 1600).is_err());
+        assert!(
+            fs::read_dir(batch_dir(&base, "MET-2026-09"))
+                .unwrap()
+                .all(|e| !e.unwrap().file_name().to_string_lossy().ends_with(".part")),
+            "keine Teildateien übrig"
+        );
         let referenced = vec![a.content_url.clone()];
         assert_eq!(orphans(&base, "MET-2026-09", &referenced).len(), 2);
         let _ = fs::remove_dir_all(&base);

@@ -42,6 +42,8 @@ pub struct BrauApp {
     confirm_reload: bool,
     max_edge: u32,
     import_rx: Option<Receiver<ImportDone>>,
+    /// Bild-URIs, deren Vorschau neu geladen werden muss.
+    ctx_forget: Vec<String>,
 }
 
 struct NewDialog {
@@ -88,6 +90,7 @@ impl BrauApp {
             confirm_reload: false,
             max_edge,
             import_rx: None,
+            ctx_forget: Vec::new(),
         };
         if let Some(repo) = repo {
             app.open_repo(&cc.egui_ctx, repo);
@@ -271,6 +274,9 @@ impl BrauApp {
             for r in done.results {
                 match r {
                     Ok(img) => {
+                        if let Some(repo) = &self.repo {
+                            self.ctx_forget.push(format!("file://{}", repo.join(&img.content_url).display()));
+                        }
                         entries.push(model::new_image(&img.content_url, &img.caption, done.step));
                         ok.push(format!("{} → {} × {} px, {}", img.source_name, img.width, img.height, images::human_size(img.bytes)));
                     }
@@ -714,6 +720,8 @@ impl BrauApp {
 
     fn reload_selected(&mut self) {
         let Some(i) = self.selected else { return };
+        // Vorschaubilder ebenfalls frisch von der Platte lesen
+        self.ctx_forget.push(String::new());
         if self.docs[i].is_new {
             self.docs.remove(i);
             self.selected = if self.docs.is_empty() { None } else { Some(i.saturating_sub(1)) };
@@ -909,6 +917,13 @@ impl eframe::App for BrauApp {
         let ctx = ui.ctx().clone();
         self.poll_runner();
         self.poll_imports();
+        for uri in self.ctx_forget.drain(..) {
+            if uri.is_empty() {
+                ctx.forget_all_images();
+            } else {
+                ctx.forget_image(&uri);
+            }
+        }
         self.validate_all();
 
         let dropped: Vec<PathBuf> = ctx.input(|i| {
