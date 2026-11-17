@@ -8,115 +8,286 @@
         "role": "neutral",
         "displayName": "Blaupausen-Unterlage / Blueprint Mat",
         "canonical": "#EBF1FA",
-        "tonalRamp": ["#12284A", "#1F4E8C", "#334766", "#526685", "#8DA6CC", "#BACBE6", "#D9E4F5", "#EBF1FA"]
+        "tonalRamp": [
+          "#12284A",
+          "#1F4E8C",
+          "#334766",
+          "#526685",
+          "#8DA6CC",
+          "#BACBE6",
+          "#D9E4F5",
+          "#EBF1FA"
+        ]
       },
       "bg-surface": {
         "role": "neutral",
         "displayName": "Warmes Werkbuch-Creme / Journal Card Cream",
         "canonical": "#FBF7EE",
-        "tonalRamp": ["#12284A", "#334766", "#526685", "#9B907C", "#D8CCB4", "#EDE3CE", "#F5EFE1", "#FBF7EE"]
+        "tonalRamp": [
+          "#12284A",
+          "#334766",
+          "#526685",
+          "#9B907C",
+          "#D8CCB4",
+          "#EDE3CE",
+          "#F5EFE1",
+          "#FBF7EE"
+        ]
       },
       "bg-subtle": {
         "role": "neutral",
         "displayName": "Hafermalz-Beige / Malt Tint",
         "canonical": "#EDE3CE",
-        "tonalRamp": ["#12284A", "#334766", "#526685", "#8D826E", "#BDB199", "#D8CCB4", "#EDE3CE", "#FBF7EE"]
+        "tonalRamp": [
+          "#12284A",
+          "#334766",
+          "#526685",
+          "#8D826E",
+          "#BDB199",
+          "#D8CCB4",
+          "#EDE3CE",
+          "#FBF7EE"
+        ]
       },
       "bg-row-hover": {
         "role": "neutral",
         "displayName": "Honig-Schimmer / Warm Row Hover",
         "canonical": "#FFF6E0",
-        "tonalRamp": ["#451A03", "#92400E", "#B45309", "#D97706", "#F4A93A", "#FDE68A", "#FFF0C2", "#FFF6E0"]
+        "tonalRamp": [
+          "#451A03",
+          "#92400E",
+          "#B45309",
+          "#D97706",
+          "#F4A93A",
+          "#FDE68A",
+          "#FFF0C2",
+          "#FFF6E0"
+        ]
       },
       "ink-primary": {
         "role": "neutral",
         "displayName": "Tief-Marine / Emblem Ink",
         "canonical": "#12284A",
-        "tonalRamp": ["#091529", "#12284A", "#1C3B69", "#334766", "#526685", "#7B8CA6", "#BAC6D6", "#E6EFFA"]
+        "tonalRamp": [
+          "#091529",
+          "#12284A",
+          "#1C3B69",
+          "#334766",
+          "#526685",
+          "#7B8CA6",
+          "#BAC6D6",
+          "#E6EFFA"
+        ]
       },
       "ink-secondary": {
         "role": "neutral",
         "displayName": "Werkstatt-Schieferblau",
         "canonical": "#334766",
-        "tonalRamp": ["#12284A", "#223450", "#334766", "#465B7D", "#526685", "#7B8CA6", "#BAC6D6", "#E6EFFA"]
+        "tonalRamp": [
+          "#12284A",
+          "#223450",
+          "#334766",
+          "#465B7D",
+          "#526685",
+          "#7B8CA6",
+          "#BAC6D6",
+          "#E6EFFA"
+        ]
       },
       "ink-muted": {
         "role": "neutral",
         "displayName": "Skalen-Blaugrau",
         "canonical": "#526685",
-        "tonalRamp": ["#12284A", "#223450", "#334766", "#526685", "#7184A1", "#98A7BE", "#CAD3E0", "#E6EFFA"]
+        "tonalRamp": [
+          "#12284A",
+          "#223450",
+          "#334766",
+          "#526685",
+          "#7184A1",
+          "#98A7BE",
+          "#CAD3E0",
+          "#E6EFFA"
+        ]
       },
       "blueprint-blue": {
         "role": "primary",
         "displayName": "Blaupausen-Blau / Blueprint Blue",
         "canonical": "#1F4E8C",
-        "tonalRamp": ["#0D2445", "#153869", "#1F4E8C", "#2C67B5", "#4D84CC", "#84ADE3", "#C2D8F5", "#E6EFFA"]
+        "tonalRamp": [
+          "#0D2445",
+          "#153869",
+          "#1F4E8C",
+          "#2C67B5",
+          "#4D84CC",
+          "#84ADE3",
+          "#C2D8F5",
+          "#E6EFFA"
+        ]
       },
       "blueprint-tint": {
         "role": "primary",
         "displayName": "Blaupausen-Nebel",
         "canonical": "#E6EFFA",
-        "tonalRamp": ["#153869", "#1F4E8C", "#2C67B5", "#4D84CC", "#78A4DC", "#A6C5EB", "#CFE1F7", "#E6EFFA"]
+        "tonalRamp": [
+          "#153869",
+          "#1F4E8C",
+          "#2C67B5",
+          "#4D84CC",
+          "#78A4DC",
+          "#A6C5EB",
+          "#CFE1F7",
+          "#E6EFFA"
+        ]
       },
       "amber-accent": {
         "role": "primary",
         "displayName": "Spund-Bernstein / Mead Amber",
         "canonical": "#B45309",
-        "tonalRamp": ["#451A03", "#78350F", "#92400E", "#B45309", "#D97706", "#F4A93A", "#FDE68A", "#FFF0C2"]
+        "tonalRamp": [
+          "#451A03",
+          "#78350F",
+          "#92400E",
+          "#B45309",
+          "#D97706",
+          "#F4A93A",
+          "#FDE68A",
+          "#FFF0C2"
+        ]
       },
       "amber-gold": {
         "role": "primary",
         "displayName": "Waben-Gold / Honeycomb Gold",
         "canonical": "#F4A93A",
-        "tonalRamp": ["#451A03", "#92400E", "#B45309", "#D97706", "#F4A93A", "#F7BE68", "#FCE0AC", "#FFF0C2"]
+        "tonalRamp": [
+          "#451A03",
+          "#92400E",
+          "#B45309",
+          "#D97706",
+          "#F4A93A",
+          "#F7BE68",
+          "#FCE0AC",
+          "#FFF0C2"
+        ]
       },
       "amber-hover": {
         "role": "primary",
         "displayName": "Dunkler Waldhonig / Deep Mead Amber",
         "canonical": "#92400E",
-        "tonalRamp": ["#3B1502", "#5C2408", "#78350F", "#92400E", "#B45309", "#D97706", "#F4A93A", "#FFF0C2"]
+        "tonalRamp": [
+          "#3B1502",
+          "#5C2408",
+          "#78350F",
+          "#92400E",
+          "#B45309",
+          "#D97706",
+          "#F4A93A",
+          "#FFF0C2"
+        ]
       },
       "amber-tint": {
         "role": "primary",
         "displayName": "Jungmet-Glanz / Warm Honey Tint",
         "canonical": "#FFF0C2",
-        "tonalRamp": ["#78350F", "#92400E", "#B45309", "#D97706", "#F4A93A", "#F8CE82", "#FCE2AE", "#FFF0C2"]
+        "tonalRamp": [
+          "#78350F",
+          "#92400E",
+          "#B45309",
+          "#D97706",
+          "#F4A93A",
+          "#F8CE82",
+          "#FCE2AE",
+          "#FFF0C2"
+        ]
       },
       "olive-status": {
         "role": "secondary",
         "displayName": "Hopfen-Oliv / Bottle Green",
         "canonical": "#1E5631",
-        "tonalRamp": ["#0D2818", "#143D23", "#1E5631", "#276F40", "#5FA035", "#8CC152", "#B8DFA1", "#DCFCE7"]
+        "tonalRamp": [
+          "#0D2818",
+          "#143D23",
+          "#1E5631",
+          "#276F40",
+          "#5FA035",
+          "#8CC152",
+          "#B8DFA1",
+          "#DCFCE7"
+        ]
       },
       "olive-tint": {
         "role": "secondary",
         "displayName": "Hopfen-Grünglas",
         "canonical": "#DCFCE7",
-        "tonalRamp": ["#143D23", "#1E5631", "#276F40", "#5FA035", "#7DB343", "#A4D67B", "#C5EBC9", "#DCFCE7"]
+        "tonalRamp": [
+          "#143D23",
+          "#1E5631",
+          "#276F40",
+          "#5FA035",
+          "#7DB343",
+          "#A4D67B",
+          "#C5EBC9",
+          "#DCFCE7"
+        ]
       },
       "grape-purple": {
         "role": "tertiary",
         "displayName": "Trauben-Violett / Berry Must",
         "canonical": "#7E44A8",
-        "tonalRamp": ["#361A4D", "#522973", "#68358F", "#7E44A8", "#9B64C4", "#BC91DC", "#DDC2F0", "#F3E8FF"]
+        "tonalRamp": [
+          "#361A4D",
+          "#522973",
+          "#68358F",
+          "#7E44A8",
+          "#9B64C4",
+          "#BC91DC",
+          "#DDC2F0",
+          "#F3E8FF"
+        ]
       },
       "grape-tint": {
         "role": "tertiary",
         "displayName": "Trauben-Duft",
         "canonical": "#F3E8FF",
-        "tonalRamp": ["#522973", "#7E44A8", "#9B64C4", "#B180D4", "#C8A3E3", "#DFC6F2", "#EBDBFA", "#F3E8FF"]
+        "tonalRamp": [
+          "#522973",
+          "#7E44A8",
+          "#9B64C4",
+          "#B180D4",
+          "#C8A3E3",
+          "#DFC6F2",
+          "#EBDBFA",
+          "#F3E8FF"
+        ]
       },
       "border-hairline": {
         "role": "neutral",
         "displayName": "Werkbuch-Haarlinie",
         "canonical": "#D8CCB4",
-        "tonalRamp": ["#12284A", "#526685", "#8D826E", "#B3A68E", "#C8BC9F", "#D8CCB4", "#EDE3CE", "#FBF7EE"]
+        "tonalRamp": [
+          "#12284A",
+          "#526685",
+          "#8D826E",
+          "#B3A68E",
+          "#C8BC9F",
+          "#D8CCB4",
+          "#EDE3CE",
+          "#FBF7EE"
+        ]
       },
       "border-strong": {
         "role": "neutral",
         "displayName": "Wappen-Kontur",
         "canonical": "#12284A",
-        "tonalRamp": ["#091529", "#12284A", "#1F4E8C", "#334766", "#526685", "#8FA0B8", "#C8D3E3", "#E6EFFA"]
+        "tonalRamp": [
+          "#091529",
+          "#12284A",
+          "#1F4E8C",
+          "#334766",
+          "#526685",
+          "#8FA0B8",
+          "#C8D3E3",
+          "#E6EFFA"
+        ]
       }
     },
     "typographyMeta": {
@@ -192,7 +363,7 @@
       "kind": "nav",
       "refersTo": "nav-header",
       "description": "Kopfzeile mit Waben-Emblem, zweifarbiger Serif-Wortmarke und Status-Pill.",
-      "html": "<header class=\"ds-site-header\"><div class=\"ds-brand-lockup\"><div><p class=\"ds-site-brand\"><a href=\"#top\">Brau<span class=\"ds-brand-accent\">pause</span></a></p><p class=\"ds-site-subtitle\">NACH BLAUPAUSE GEBRAUT · SUD-REGISTER</p></div></div><div class=\"ds-header-meta\"><span class=\"ds-status-pill\">1 dokumentierter Sud</span></div></header>",
+      "html": "<header class=\"ds-site-header\"><div class=\"ds-brand-lockup\"><div><p class=\"ds-site-brand\"><a href=\"#top\">Brau<span class=\"ds-brand-accent\">pause</span></a></p><p class=\"ds-site-subtitle\">NACH BLAUPAUSE GEBRAUT · SUD-REGISTER</p></div></div><div class=\"ds-header-meta\"></div></header>",
       "css": ".ds-site-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding-bottom: 1.25rem; border-bottom: 2px solid var(--border-strong, #12284A); font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif); } .ds-site-brand { font-family: var(--font-serif, 'Iowan Old Style', Palatino, Georgia, serif); font-size: 1.4rem; font-weight: 700; margin: 0; } .ds-site-brand a { color: var(--ink-primary, #12284A); text-decoration: none; } .ds-brand-accent { color: var(--blueprint-blue, #1F4E8C); } .ds-site-subtitle { margin: 0.2rem 0 0; color: var(--ink-secondary, #334766); font-size: 0.85rem; } .ds-status-pill { display: inline-flex; align-items: center; font-size: 0.85rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 999px; background-color: var(--olive-tint, #DCFCE7); color: var(--olive-status, #1E5631); }"
     },
     {

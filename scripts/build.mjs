@@ -1173,15 +1173,14 @@ function renderIndexPage(batches) {
           ${brewerName ? `<span class="banner-brewer">Gebraut von ${escapeHtml(brewerName)}</span>` : ''}
         </div>
         <div class="showcase-body${leadImg ? '' : ' no-photo'}">
-          ${
-            leadImg
-              ? `<a class="showcase-photo-link" href="${batchUrl}">
+          ${leadImg
+          ? `<a class="showcase-photo-link" href="${batchUrl}">
                   <div class="showcase-photo-frame">
                     <img src="./${escapeHtml(leadImg.contentUrl)}" alt="${escapeHtml(leadImg.caption)}" loading="lazy">
                   </div>
                 </a>`
-              : ''
-          }
+          : ''
+        }
           <div>
             <h2 class="showcase-title"><a href="${batchUrl}">${escapeHtml(b.name)}</a></h2>
             <p class="showcase-sub">${escapeHtml(b['brew:style']?.name || b.recipeCategory)} · Angestellt am ${formatDate(b.dateCreated, false)}</p>
@@ -1273,9 +1272,6 @@ function renderIndexPage(batches) {
   <div class="container">
     <header class="site-header">
       ${renderBrandLockup('./', 'Nach Blaupause gebraut · Sud-Register &amp; Kellerbuch')}
-      <div class="header-meta">
-        <span class="status-pill"><strong class="num">${batches.length}</strong>\u00A0dokumentierte${batches.length === 1 ? 'r Sud' : ' Sude'}</span>
-      </div>
     </header>
 
     <main>
@@ -1376,8 +1372,7 @@ function renderBatchDetailPage(batch) {
       const cat = CATEGORY_LABELS[ing['brew:category']] || ing['brew:category'];
       const toneClass = CATEGORY_TONES[ing['brew:category']] || 'tone-blueprint';
       return `<tr>
-        <td><strong>${escapeHtml(ing.name)}</strong>${
-          ing.description ? `<div class="item-desc">${escapeHtml(ing.description)}</div>` : ''
+        <td><strong>${escapeHtml(ing.name)}</strong>${ing.description ? `<div class="item-desc">${escapeHtml(ing.description)}</div>` : ''
         }</td>
         <td><span class="cat-badge ${toneClass}">${escapeHtml(cat)}</span></td>
         <td><span class="step-badge">${escapeHtml(stage)}</span></td>
@@ -1460,13 +1455,13 @@ function renderBatchDetailPage(batch) {
         stepImages.length > 0
           ? `<div class="step-photo-row">
               ${stepImages
-                .map(
-                  (img) => `<button type="button" class="step-photo-card" data-lightbox-src="../${escapeHtml(img.contentUrl)}" data-lightbox-caption="${escapeHtml(img.caption)}">
+            .map(
+              (img) => `<button type="button" class="step-photo-card" data-lightbox-src="../${escapeHtml(img.contentUrl)}" data-lightbox-caption="${escapeHtml(img.caption)}">
                     <img src="../${escapeHtml(img.contentUrl)}" alt="${escapeHtml(img.caption)}" loading="lazy">
                     <span class="photo-caption">${escapeHtml(img.caption)}</span>
                   </button>`
-                )
-                .join('\n')}
+            )
+            .join('\n')}
             </div>`
           : '';
 
@@ -1533,38 +1528,35 @@ ${cleanJsonLd(batch)}
                   <span class="hero-meta-label">Kategorie</span>
                   <span class="hero-meta-value">${escapeHtml(batch.recipeCategory)}</span>
                 </div>
-                ${
-                  batch['brew:style']?.name
-                    ? `<div class="hero-meta-chip">
+                ${batch['brew:style']?.name
+      ? `<div class="hero-meta-chip">
                         <span class="hero-meta-label">Stil</span>
                         <span class="hero-meta-value">${escapeHtml(batch['brew:style'].name)}</span>
                       </div>`
-                    : ''
-                }
+      : ''
+    }
                 <div class="hero-meta-chip">
                   <span class="hero-meta-label">Angestellt</span>
                   <span class="hero-meta-value num"><time datetime="${escapeHtml(batch.dateCreated)}">${formatDate(batch.dateCreated)}</time></span>
                 </div>
-                ${
-                  batch.dateModified
-                    ? `<div class="hero-meta-chip">
+                ${batch.dateModified
+      ? `<div class="hero-meta-chip">
                         <span class="hero-meta-label">Letzter Stand</span>
                         <span class="hero-meta-value num"><time datetime="${escapeHtml(batch.dateModified)}">${formatDate(batch.dateModified)}</time></span>
                       </div>`
-                    : ''
-                }
+      : ''
+    }
               </div>
 
               ${keywordsHtml ? `<ul class="tag-list" aria-label="Schlagwörter">${keywordsHtml}</ul>` : ''}
             </div>
 
-            ${
-              heroImages.length > 0
-                ? `<div class="hero-photo-deck" aria-label="Fotos zum Sud">
+            ${heroImages.length > 0
+      ? `<div class="hero-photo-deck" aria-label="Fotos zum Sud">
                     ${heroPhotosHtml}
                   </div>`
-                : ''
-            }
+      : ''
+    }
           </div>
         </div>
 
@@ -1580,22 +1572,20 @@ ${cleanJsonLd(batch)}
               <dd>${formatQuantity(vs.currentGravity || vs.finalGravity)}</dd>
               ${(vs.currentGravity?.description || vs.finalGravity?.description) ? `<dd class="dl-note">${escapeHtml((vs.currentGravity || vs.finalGravity).description)}</dd>` : ''}
 
-              ${
-                latestRealExtract
-                  ? `<dt>Tatsächlicher Restextrakt</dt>
+              ${latestRealExtract
+      ? `<dt>Tatsächlicher Restextrakt</dt>
                      <dd>${formatQuantity(latestRealExtract)}</dd>`
-                  : ''
-              }
+      : ''
+    }
 
               <dt>Alkoholgehalt (ABV)</dt>
               <dd>${formatQuantity(vs.abv)}</dd>
 
-              ${
-                latestPressure
-                  ? `<dt>Spunddruck (aktuell)</dt>
+              ${latestPressure
+      ? `<dt>Spunddruck (aktuell)</dt>
                      <dd>${formatQuantity(latestPressure)}</dd>`
-                  : ''
-              }
+      : ''
+    }
             </dl>
           </section>
 
@@ -1611,9 +1601,8 @@ ${cleanJsonLd(batch)}
               </div>
             </div>
 
-            ${
-              ledgerRowsHtml
-                ? `<div class="table-wrap">
+            ${ledgerRowsHtml
+      ? `<div class="table-wrap">
                     <table aria-label="Volumen-Buchungsjournal">
                       <thead>
                         <tr>
@@ -1628,8 +1617,8 @@ ${cleanJsonLd(batch)}
                       </tbody>
                     </table>
                   </div>`
-                : ''
-            }
+      : ''
+    }
           </section>
         </div>
 
@@ -1650,14 +1639,13 @@ ${cleanJsonLd(batch)}
               </tbody>
             </table>
           </div>
-          ${
-            toolsHtml
-              ? `<div class="equipment-wrap">
+          ${toolsHtml
+      ? `<div class="equipment-wrap">
                   <p class="equipment-heading">Verwendetes Equipment</p>
                   <ul class="tag-list">${toolsHtml}</ul>
                 </div>`
-              : ''
-          }
+      : ''
+    }
         </section>
 
         <section aria-labelledby="heading-timeline">
