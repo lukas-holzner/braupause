@@ -15,7 +15,7 @@ web
 
 Braupause dokumentiert Brau-, Met- und Gärprozesse als strukturierte, validierte Schema.org / JSON-LD-Datensätze (`batches/*.json`) und bereitet sie als statische Website (`dist/`) für den praktischen Einsatz im Braukeller sowie als offene Dokumentation auf.
 
-Über das bestehende Sud-Register und die Detailprotokolle hinaus soll das Produkt:
+Über das bestehende Kellerbuch und die Detailprotokolle hinaus soll das Produkt:
 1. **Prozess- & Gärdaten visuell auswerten:** Gärverlaufs-, Extrakt-, Druck- und Temperaturkurven sowie reichhaltigere Prozess-Auswertungen direkt aus den chronologischen JSON-LD-Schritten (`recipeInstructions` / `brew:measurements` / `brew:settings`) rendern.
 2. **Praxis-Features für Keller & Ausschank bieten:** Werkzeuge für den realen Kellerbetrieb bereitstellen, darunter Druck-/QR-Code-Etiketten für Kegs (z. B. Jolly Keg) und Flaschen, Zapf- und Abfüll-Übersichten sowie strukturierte Verkostungsnotizen (`tasting`).
 3. **Interaktive Brau- & Met-Rechner im Browser bereitstellen:** Praxisrechner für den Brautag und die Kellerarbeit integrieren (z. B. Refraktometer-Alkoholfehler-Korrektur, Nachsüßungs-Berechnung auf Ziel-Brix/Plato, Spunddruck- und Karbonisierungsrechner).

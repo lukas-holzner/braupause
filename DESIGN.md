@@ -1,6 +1,6 @@
 ---
 name: Braupause
-description: Sud-Register, Kellerbuch und Gärprotokoll im Maker's Blueprint & Honey Cellar Journal
+description: Kellerbuch und Gärprotokoll im Maker's Blueprint & Honey Cellar Journal
 colors:
   bg-page: "#EBF1FA"
   bg-surface: "#FBF7EE"

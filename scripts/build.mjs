@@ -8,6 +8,7 @@ const BATCHES_DIR = path.join(ROOT_DIR, 'batches');
 const SCHEMA_PATH = path.join(ROOT_DIR, 'schemas', 'brew-batch.schema.json');
 const DIST_DIR = path.join(ROOT_DIR, 'dist');
 const LOGO_DIR = path.join(ROOT_DIR, 'assets', 'logo');
+const PAGES_DIR = path.join(ROOT_DIR, 'pages');
 const BATCH_ASSETS_DIR = path.join(ROOT_DIR, 'assets', 'batches');
 
 const STAGE_LABELS = {
@@ -100,7 +101,7 @@ function renderIconLinks(root) {
 function renderBrandLockup(root, subtitleHtml) {
   return `<div class="brand-lockup">
         <a class="brand-emblem" href="${root}index.html" tabindex="-1" aria-hidden="true">
-          <img src="${root}assets/logo/braupause-emblem.svg" alt="" width="64" height="64">
+          <img src="${root}assets/logo/braupause-emblem.svg" alt="" width="80" height="80">
         </a>
         <div>
           <p class="site-brand"><a href="${root}index.html">Brau<span class="brand-accent">pause</span></a></p>
@@ -268,8 +269,8 @@ button:focus-visible {
 
 .brand-emblem img {
   display: block;
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -279,7 +280,7 @@ button:focus-visible {
 
 .site-brand {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0;
@@ -297,7 +298,7 @@ button:focus-visible {
 .site-subtitle {
   margin: 0.2rem 0 0;
   color: var(--ink-secondary);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -713,6 +714,18 @@ th.num, td.num {
 }
 
 /* Batch Detail Hero & Photo Pinboard */
+.page-title {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin: 0 0 0.2rem;
+}
+
+.page-lede {
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+  margin: 0 0 1.5rem;
+}
+
 .batch-hero {
   background: var(--bg-surface);
   border: 2px solid var(--border-strong);
@@ -1098,6 +1111,48 @@ th.num, td.num {
   color: var(--ink-primary);
 }
 
+/* Kontaktformular */
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 36rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.3rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink-primary);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 0.55rem 0.85rem;
+}
+
+.contact-form textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.contact-form button {
+  justify-self: start;
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink-primary);
+  background: var(--bg-subtle);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+}
+
 /* Footer */
 .site-footer {
   margin-top: 4rem;
@@ -1122,9 +1177,21 @@ th.num, td.num {
 }
 
 @media (max-width: 780px) {
-  .showcase-body,
   .hero-body-grid {
     grid-template-columns: 1fr;
+  }
+  .showcase-body {
+    grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .showcase-body {
+    grid-template-columns: 1fr;
+  }
+  .showcase-photo-link {
+    max-width: 14rem;
   }
 }
 
@@ -1147,8 +1214,12 @@ th.num, td.num {
 `;
 }
 
+// Anzahl der großen Karten auf der Startseite (neueste zuerst); alle Sude stehen in der Tabelle.
+const SHOWCASE_LIMIT = 3;
+
 function renderIndexPage(batches) {
   const showcaseCardsHtml = batches
+    .slice(0, SHOWCASE_LIMIT)
     .map((b) => {
       const og = formatQuantity(b['brew:vitalStatistics']?.originalGravity);
       const cg = formatQuantity(
@@ -1167,7 +1238,6 @@ function renderIndexPage(batches) {
       return `<article class="batch-showcase-card">
         <div class="blueprint-banner">
           <div class="banner-group">
-            <span class="code-id code-id-light">${escapeHtml(b.identifier)}</span>
             <span class="status-pill">${escapeHtml(b['brew:statusLabel'] || b['brew:status'])}</span>
           </div>
           ${brewerName ? `<span class="banner-brewer">Gebraut von ${escapeHtml(brewerName)}</span>` : ''}
@@ -1241,7 +1311,6 @@ function renderIndexPage(batches) {
         .toLowerCase();
 
       return `<tr class="batch-row" data-search="${escapeHtml(searchBlob)}">
-        <td><a href="./batches/${encodeURIComponent(b.identifier)}.html"><span class="code-id">${escapeHtml(b.identifier)}</span></a></td>
         <td>
           <strong><a href="./batches/${encodeURIComponent(b.identifier)}.html">${escapeHtml(b.name)}</a></strong>
           <div class="batch-substyle">
@@ -1263,20 +1332,20 @@ function renderIndexPage(batches) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Braupause — Sud-Register &amp; Kellerbuch</title>
-  <meta name="description" content="Braupause — Sud-Register &amp; Kellerbuch für Brau-, Met- und Gärprotokolle.">
+  <title>Braupause — Kellerbuch</title>
+  <meta name="description" content="Braupause — Kellerbuch für Brau-, Met- und Gärprotokolle.">
   ${renderIconLinks('./')}
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div class="container">
     <header class="site-header">
-      ${renderBrandLockup('./', 'Nach Blaupause gebraut · Sud-Register &amp; Kellerbuch')}
+      ${renderBrandLockup('./', 'Nach Blaupause gebraut · Kellerbuch')}
     </header>
 
     <main>
-      <h1>Sud-Register &amp; Kellerbuch</h1>
-      <p>Alle Brau-, Met- und Gärsude im Überblick — vom ersten Ansatz im Fass bis zur letzten Verkostungsprobe.</p>
+      <h1 class="page-title">Kellerbuch</h1>
+      <p class="page-lede">Alle Brau-, Met- und Gärsude im Überblick — vom ersten Ansatz im Fass bis zur letzten Verkostungsprobe.</p>
 
       <section class="batch-showcase-grid" aria-label="Aktuelle Sude im Keller">
         ${showcaseCardsHtml}
@@ -1289,7 +1358,7 @@ function renderIndexPage(batches) {
           id="batch-filter"
           class="search-input"
           type="search"
-          placeholder="Nach ID, Name, Stil, Brauer oder Schlagwort filtern (z. B. MET-2026-01, Honigwein, JollyKeg)…"
+          placeholder="Nach Schlagwort filtern…"
           autocomplete="off"
         >
       </div>
@@ -1298,7 +1367,6 @@ function renderIndexPage(batches) {
         <table aria-label="Dokumentierte Sude">
           <thead>
             <tr>
-              <th>Sud-ID</th>
               <th>Rezept &amp; Stil</th>
               <th>Status</th>
               <th class="num">Brautag</th>
@@ -1319,7 +1387,7 @@ function renderIndexPage(batches) {
     </main>
 
     <footer class="site-footer">
-      <span>Braupause · Nach Blaupause gebraut</span>
+      <span>Braupause · Nach Blaupause gebraut · <a href="./datenschutz.html">Datenschutz</a> · <a href="./kontakt.html">Kontakt</a></span>
       <span>Wenn ihr auch so coole Projekte umsetzen wollt, schaut gerne mal im <a href="https://www.fablab-muenchen.de/" target="_blank" rel="noopener noreferrer">FabLab München e.V.</a> vorbei.</span>
     </footer>
   </div>
@@ -1658,7 +1726,7 @@ ${cleanJsonLd(batch)}
     </main>
 
     <footer class="site-footer">
-      <span><a href="../index.html">← Zurück zum Sud-Register</a></span>
+      <span><a href="../index.html">← Zurück zum Kellerbuch</a> · <a href="../datenschutz.html">Datenschutz</a> · <a href="../kontakt.html">Kontakt</a></span>
       <span>Sud-ID: <code class="code-id">${escapeHtml(batch.identifier)}</code>${brewerName ? ` · Gebraut von ${escapeHtml(brewerName)}` : ''}</span>
     </footer>
   </div>
@@ -1767,6 +1835,9 @@ async function main() {
   await fs.writeFile(path.join(DIST_DIR, 'styles.css'), buildStyles(), 'utf8');
   await fs.writeFile(path.join(DIST_DIR, '.nojekyll'), '', 'utf8');
   await fs.copyFile(SCHEMA_PATH, path.join(DIST_DIR, 'schemas', 'brew-batch.schema.json'));
+
+  // Statische Seiten (z. B. Datenschutz, Kontakt) unverändert nach dist/ kopieren
+  await copyAssetDirectory(PAGES_DIR, DIST_DIR, /\.html$/i);
 
   // Copy web-ready logo & batch media files (SVG/PNG/JPG/WebP)
   await copyAssetDirectory(LOGO_DIR, path.join(DIST_DIR, 'assets', 'logo'), /\.(svg|png)$/i);

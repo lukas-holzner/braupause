@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Kontakt — Braupause</title>
+  <link rel="icon" href="./assets/logo/braupause-favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="./assets/logo/braupause-favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/logo/braupause-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="brand-lockup">
+        <a class="brand-emblem" href="./index.html" tabindex="-1" aria-hidden="true">
+          <img src="./assets/logo/braupause-emblem.svg" alt="" width="80" height="80">
+        </a>
+        <div>
+          <p class="site-brand"><a href="./index.html">Brau<span class="brand-accent">pause</span></a></p>
+          <p class="site-subtitle">Nach Blaupause gebraut · Kellerbuch</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1>Kontakt</h1>
+      <p>Fragen, Hinweise oder Rezeptideen? Schreib mir. Beim Absenden öffnet sich dein E-Mail-Programm mit dem vorbereiteten Text.</p>
+
+      <form class="contact-form" id="contact-form" action="mailto:braupause@lukas.lhal.de" method="get">
+        <label>Name (optional)
+          <input type="text" name="name" autocomplete="name">
+        </label>
+        <label>Betreff
+          <input type="text" name="subject" required value="Nachricht über das Kellerbuch">
+        </label>
+        <label>Nachricht
+          <textarea name="body" required></textarea>
+        </label>
+        <button type="submit">E-Mail-Programm öffnen</button>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <span><a href="./index.html">← Zurück zum Kellerbuch</a> · <a href="./datenschutz.html">Datenschutz</a></span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = form.elements.name.value.trim();
+        var body = form.elements.body.value.trim();
+        if (name) body += '\n\n' + name;
+        window.location.href = 'mailto:braupause@lukas.lhal.de'
+          + '?subject=' + encodeURIComponent(form.elements.subject.value.trim())
+          + '&body=' + encodeURIComponent(body);
+      });
+    })();
+  </script>
+</body>
+</html>

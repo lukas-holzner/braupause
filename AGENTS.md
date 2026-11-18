@@ -19,6 +19,7 @@ braupause/
 │   └── brew-batch.schema.json       # Verbindliches JSON-Schema (Draft 2020-12)
 ├── batches/
 │   └── <BATCH-ID>.json              # Einzelne Sude (z. B. MET-2026-01.json)
+├── pages/                           # Statische HTML-Seiten (z. B. datenschutz.html, kontakt.html), werden unverändert nach dist/ kopiert
 ├── scripts/
 │   ├── validate.mjs                 # Schema- & Plausibilitäts-Validator (CI + lokal)
 │   └── build.mjs                    # Statischer Site-Generator -> dist/
