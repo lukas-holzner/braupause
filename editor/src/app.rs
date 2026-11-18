@@ -532,7 +532,7 @@ impl BrauApp {
         if r.changed() {
             self.commit_msg_auto = self.commit_msg.trim().is_empty();
         }
-        ui.checkbox(&mut self.run_npm_test, "Vorher npm test (Pflicht laut AGENTS.md)");
+        ui.checkbox(&mut self.run_npm_test, "Vorher npm test");
 
         let n_files = self.selected_files().len() + self.docs.iter().filter(|d| d.is_new).count();
         let can_commit = !busy && (n_files > 0 || self.dirty_count() > 0) && !self.commit_msg.trim().is_empty();
