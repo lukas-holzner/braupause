@@ -29,7 +29,7 @@
   "brew:status": "primary_fermentation",
   "brew:statusLabel": "Hauptgärung",
   "dateCreated": "2026-11-16T22:10:00+01:00",
-  "dateModified": "2026-11-24T19:11:00+01:00",
+  "dateModified": "2026-11-24T19:21:00+01:00",
   "image": [
     {
       "@type": "ImageObject",
@@ -46,7 +46,7 @@
     {
       "@type": "ImageObject",
       "contentUrl": "assets/batches/MET-2026-02/pxl-20261124-164656676.jpg",
-      "caption": "",
+      "caption": "Erste Messung und Geschmacksprobe",
       "stepPosition": 2
     }
   ],
@@ -187,7 +187,7 @@
         {
           "@type": "ImageObject",
           "contentUrl": "assets/batches/MET-2026-02/pxl-20261124-164656676.jpg",
-          "caption": "",
+          "caption": "Erste Messung und Geschmacksprobe",
           "stepPosition": 2
         }
       ],
